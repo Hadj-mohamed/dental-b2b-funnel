@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #0A2540;
+  --color-primary-hover: #0F2F52;
+  --color-secondary: #00D4B2;
+  --color-secondary-hover: #00BFA0;
+  --color-accent-amber: #F59E0B;
+  --color-accent-rose: #F43F5E;
+  --color-accent-emerald: #10B981;
+  --font-sans: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+html, body { direction: rtl; text-align: right; }
+body {
+  font-family: var(--font-sans);
+  background: #ffffff;
+  color: var(--color-primary);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--font-jakarta); font-weight: 700; letter-spacing: -0.01em; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; }
+* { scrollbar-width: thin; scrollbar-color: #94a3b8 #f1f5f9; }
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(0.5deg); }
+}
+.hero-float { animation: hero-float 6s ease-in-out infinite; will-change: transform; }
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-float, .pulse-soft { animation: none !important; }
+}
